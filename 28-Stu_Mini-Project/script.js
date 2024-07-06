@@ -25,7 +25,7 @@ function rockPaperScissors() {
         if (gameDecision === 'Y' || gameDecision === 'N') {
             break;
         }
-        gameResults['invalid_entry']++
+        gameResults['invalid_entry']++;
         gameDecision = prompt(`Invalid entry. Please enter: (Y, N)`);
     };
 
@@ -49,7 +49,7 @@ function rockPaperScissors() {
             } else if (playerChoice === 'S') {
                 break
             } else {
-                gameResults['invalid_entry']++
+                gameResults['invalid_entry']++;
                 playerChoice = prompt(`Invalid entry. Please enter either R, P or S.`)
             };
         };
@@ -62,34 +62,38 @@ function rockPaperScissors() {
                 if (playerChoice === 'R' || playerChoice === 'P' || playerChoice === 'S') {
                     break;
                 }
-                gameResults['invalid_entry']++
+                gameResults['invalid_entry']++;
                 playerChoice = prompt(`Invalid entry. Please enter: (R, P, S)`);
             };
         };
 
-        if ((playerChoice === 'R' && virtualPlayer !== 'P') || 
+        if (playerChoice === null) {
+            break;
+        } else if ((playerChoice === 'R' && virtualPlayer !== 'P') || 
             (playerChoice === 'S' && virtualPlayer !== 'R') ||
             (playerChoice === 'P' && virtualPlayer !== 'S')) {
             alert(`You win! Your choice: ${playerChoice}. The virtual player: ${virtualPlayer}`);
-            gameResults['wins']++
+            gameResults['wins']++;
         } else {
             alert(`You lose! Your choice: ${playerChoice}. The virtual player: ${virtualPlayer}`);
-            gameResults['losses']++
+            gameResults['losses']++;
         };
 
         let keepPlaying = prompt(`Would you like another game? Enter: (Y, N)`);
 
         while (keepPlaying !== null) {
             if (keepPlaying === 'Y' || keepPlaying === 'N') {
-                gameResults['games_played']++
+                gameResults['games_played']++;
                 break;
             };
-            gameResults['invalid_entry']++
+            gameResults['invalid_entry']++;
             keepPlaying = prompt(`Invalid entry. Would you like another game? Enter: (Y, N)`);
         };
 
-        if (keepPlaying === 'N') {
-            alert(`You have ${gameResults['wins']} wins & ${gameResults['losses']} losses. You played a total of ${gameResults['games_played']} games played. You had ${gameResults['invalid_entry']} invalid entries entered.`);
+        if (keepPlaying === null) {
+            break;
+        } else if (keepPlaying === 'N') {
+            alert(`You have ${gameResults['wins']} wins & ${gameResults['losses']} losses. You played a total of ${gameResults['games_played']} games played. You had ${gameResults['invalid_entry']} invalid entries.`);
             break;
         };           
     };
