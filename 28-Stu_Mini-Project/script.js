@@ -11,7 +11,8 @@ function mainGame() {
 let matchResults = {
     wins: 0,
     losses: 0,
-    ties: 0
+    ties: 0,
+    games: 0
 };
 
 function welcome() {
@@ -85,6 +86,7 @@ function decision() {
         } else if ((playerDecision !== 'Y')) {
             alert(`Invalid entry. Please try again.`)
         } else {
+            counter('newGame');
             gameOptOut = score();
         };
         if (gameOptOut === undefined) {
@@ -104,6 +106,8 @@ function counter(result) {
             break;
         case 'tie':
             matchResults['ties']++;
+        case 'newGame':
+            matchResults['games']++;
         default:
             break;
     };
@@ -112,7 +116,9 @@ function counter(result) {
 
 function results() {
     let matchStats = matchResults;
-    alert(`Here are your match results. Wins: ${matchStats['wins']}. Losses: ${matchStats['losses']}. Ties: ${matchStats['ties']}. Thank you for playing!`);
+    alert(`Here are your match results. Total Games: ${matchStats['games'] + matchStats['ties']}.
+         Wins: ${matchStats['wins']}. Losses: ${matchStats['losses']}. 
+         Ties: ${matchStats['ties']}. Thank you for playing!`);
 };
 
 mainGame();
