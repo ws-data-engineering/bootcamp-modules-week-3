@@ -1,13 +1,4 @@
 // Javascript example of Rock | Paper | Scissors 
-function mainGame() {
-    let startGame = welcome();
-    if (startGame === 'end') {
-        return;
-    };
-    score();
-    decision();
-};
-
 let matchResults = {
     wins: 0,
     losses: 0,
@@ -29,7 +20,7 @@ function welcome() {
     };
 };
 
-function game() {
+function choice() {
     let gameQuestion;
     while (gameQuestion !== null) {
         gameQuestion = prompt(`Please enter either R (Rock), P (Paper) or S (Scissors):`);
@@ -48,14 +39,13 @@ function virtual() {
     const handChoice = ['R', 'P', 'S'];
     const randomIndex = Math.floor(Math.random() * handChoice.length);
     const virtualChoice = handChoice[randomIndex];
-    console.log(virtualChoice);
     return virtualChoice;
 };
 
-function score() {
+function game() {
     let playerHand; 
     while (playerHand !== null) {
-        playerHand = game();
+        playerHand = choice();
         virtualPlayer = virtual(); 
         if (playerHand === virtualPlayer) {
             alert(`It's a draw. Try again.`)
@@ -87,7 +77,7 @@ function decision() {
             alert(`Invalid entry. Please try again.`)
         } else {
             counter('newGame');
-            gameOptOut = score();
+            gameOptOut = game();
         };
         if (gameOptOut === undefined) {
             return;
@@ -119,6 +109,18 @@ function results() {
     alert(`Here are your match results. Total Games: ${matchStats['games'] + matchStats['ties']}.
          Wins: ${matchStats['wins']}. Losses: ${matchStats['losses']}. 
          Ties: ${matchStats['ties']}. Thank you for playing!`);
+};
+
+function mainGame() {
+    let startGame = welcome();
+    if (startGame === 'end') {
+        return;
+    };
+    let setGame = game();
+    if (setGame === undefined) {
+        return;
+    };
+    decision();
 };
 
 mainGame();
