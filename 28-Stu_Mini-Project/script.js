@@ -91,7 +91,7 @@ function decision() {
         };
         if (gameOptOut === undefined) {
             return;
-        }
+        };
     };
     return results();
 };
