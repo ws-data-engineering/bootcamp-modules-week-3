@@ -72,15 +72,15 @@ function decision() {
         let gameOptOut = '';
         playerDecision = prompt(`Would you like another game? Enter: (Y, N)`);
         if ((playerDecision === 'N') || (playerDecision === null)) {
+            counter('newGame');
             break;
         } else if ((playerDecision !== 'Y')) {
             alert(`Invalid entry. Please try again.`)
+        } else if (gameOptOut === undefined) {
+            return;
         } else {
             counter('newGame');
-            gameOptOut = game();
-        };
-        if (gameOptOut === undefined) {
-            return;
+            gameOptOut = game();        
         };
     };
     return results();
@@ -106,7 +106,7 @@ function counter(result) {
 
 function results() {
     let matchStats = matchResults;
-    alert(`Here are your match results. Total Games: ${matchStats['games'] + matchStats['ties']}.
+    alert(`Here are your match results. Total games: ${matchStats['games']}.
          Wins: ${matchStats['wins']}. Losses: ${matchStats['losses']}. 
          Ties: ${matchStats['ties']}. Thank you for playing!`);
 };
