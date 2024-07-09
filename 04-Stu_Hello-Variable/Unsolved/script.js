@@ -23,3 +23,12 @@ function ourIntroduction(responses=[introductionSelf, introductionPartner]) {
 };
 
 ourIntroduction();
+
+
+const pets = "Dog", personName = "Name", funFact = "Hello";
+
+console.log(pets);
+console.log(personName);
+console.log(funFact);
+
+

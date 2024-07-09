@@ -1,0 +1,46 @@
+## Acceptance Criteria
+
+ - User clicks 'add employee' button it generates a series of prompts asking for first name, last name and salary.
+ - When complete, I'm prompted to continue or cancel.
+ - Continue option: prompted to add a new employee.
+ - Cancel option: Employee data displays alphabetically by last name. Console shows computed and aggregated data.
+
+ Button ---> Prompt Order (Enter first name:, Enter last name:, Enter salary:, Do you want to add another employee?)
+
+ Cancel ---> Shows Employee Data: First Name, Last Name, Salary. Salary format: $##,###.00.
+
+ Console: *Array. The average salary between our (3) employee(s) is $#####.## - float.
+
+ Log display line: string with equal sign. Example: `=======`.
+
+ Random name selector: "Congratulations to (First Last), our random drawing winner!
+
+## Instructions
+
+- collectEmployees function: Requirements (while loop, salary as number (int) and default to $0 (isNaN), the function returns an array of objects).
+- displayAverageSalary function: Takes employee array as an argument and logs to the console. *Use template literal string.
+- getRandomEmployee function: Takes employee array as an argument and logs to the console. *Use template literal string. And Math methods for random number generation.
+- The displayEmployees and trackEmployeeData functions do not need to be modified.
+
+## Grading Requirements
+
+- collectEmployees function:
+    - Create new employee object to collect first name, last name and salary. *Use prompt.
+    - Create multiple employee objects to collect information using prompt and confirm.
+
+- displayAverageSalary function:
+    - Calculate the average salary and log the following:
+        No decimals: "The average employee salary between our <numberOfEmployees> employee(s) is $<averageSalaryWithTwoDecimals>"
+        Decimals: "The average employee salary between our <numberOfEmployees> employee(s) is $<averageSalaryWithTwoDecimals>"
+
+getRandomEmployee function:
+    - Choose an employee at random and log: "Congratulations to <employeeFirstName> <employeeLastName>, our random drawing winner!"
+    - Include a random selection method that allows all employees to be selected.
+
+
+
+
+ 
+ 
+
+

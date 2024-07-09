@@ -35,7 +35,7 @@ seven = 23;
 
 // Insert comments to explain what each console log below will log to the console
 
-// type string
+// 
 console.log(typeof five);
 
 // type boolean
@@ -43,3 +43,6 @@ console.log(typeof six);
 
 // type number
 console.log(typeof seven);
+
+
+console.log(1 == 1.0);
