@@ -34,10 +34,10 @@ const collectEmployees = function() {
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
   let numEmployee = employeesArray.length;
+  let conversionIndicator = false;
   let salaryTotal = 0;
   let salaryAverage;
   let salary;
-  let conversionIndicator;
   let decimal;
   let mainInteger;
 
@@ -46,9 +46,7 @@ const displayAverageSalary = function(employeesArray) {
     salary = String(salary);
     if (salary.indexOf('.') !== -1) {
       conversionIndicator = true;
-    } else {
-      conversionIndicator = false;
-    };    
+    };   
   };
 
   if (conversionIndicator) {
@@ -80,7 +78,7 @@ const displayAverageSalary = function(employeesArray) {
     };
     salaryAverage = salaryTotal / numEmployee;
     let final = salaryAverage.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 2});
-    console.log(`The average salary between our ${numEmployee} employee(s) is ${final}`); 
+    console.log(`The average salary between our ${numEmployee} employee(s) is $${final}`); 
   };
 }
 
