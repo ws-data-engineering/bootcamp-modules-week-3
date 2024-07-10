@@ -13,12 +13,12 @@ const collectEmployees = function() {
       let lastName = prompt('Enter last name:');
       let salary = prompt('Enter salary:');
       if (isNaN(salary)) {
-        employeeObject.salary = 0;
+        salary = 0;
       };
 
       employeeObject.firstName = firstName;
       employeeObject.lastName = lastName;
-      employeeObject.salary = salary;
+      employeeObject.salary = Number(salary);
 
       employeesArray.push(employeeObject);
 
@@ -69,7 +69,7 @@ const displayAverageSalary = function(employeesArray) {
     }; 
     final = parseFloat(salaryString);
     f = final.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 2});
-    console.log(`The average salary between our ${numEmployee} employee(s) is $${f}`); 
+    console.log(`The average employee salary between our ${numEmployee} employee(s) is $${f} when given salaries with decimals.`); 
     } else {
       for (let i = 0; i < employeesArray.length; i++) {
         salary = employeesArray[i]['salary'];
@@ -78,7 +78,7 @@ const displayAverageSalary = function(employeesArray) {
     };
     salaryAverage = salaryTotal / numEmployee;
     let final = salaryAverage.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 2});
-    console.log(`The average salary between our ${numEmployee} employee(s) is $${final}`); 
+    console.log(`The average employee salary between our ${numEmployee} employee(s) is $${final} when given salaries with no decimals.`); 
   };
 }
 
@@ -157,3 +157,4 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
+
