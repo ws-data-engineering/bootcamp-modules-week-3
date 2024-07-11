@@ -46,4 +46,7 @@ let isEqualTakeThree = (x, y) => {
 
 isEqualTakeThree(99, "Friend");
 
+// Parameters - The names listed in the function definition.
+// Arguments - The real values passed to the function.
+
 
