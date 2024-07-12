@@ -56,3 +56,5 @@ function randomNumber() {
 }
 
 randomNumber();
+
+// High order functions - Returning functions from functions

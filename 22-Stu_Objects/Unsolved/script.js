@@ -43,3 +43,5 @@ customerDrinks.drinkCall(0);
 
 // Function to get the status of all drinks 
 customerDrinks.allStatus();
+
+// METHOD - A function associated with an object.

@@ -1,4 +1,4 @@
-const chosenPet = 'Spot';
+const chosenPet = 'Bernice';
 
 const shelter = {
   dogs: ['Mackie', 'Bernice', 'Cookie Monster', 'Spot'],
